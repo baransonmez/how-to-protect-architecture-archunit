@@ -18,4 +18,9 @@ public class DependencyCheckTest {
                             " to maintain clean separation of concerns and enhance code testability and flexibility.");
 
 
+    @ArchTest
+    static final ArchRule application_should_only_be_depended_on_by_application_and_infra =
+            classes().that().resideInAPackage("..application..")
+                    .should().onlyHaveDependentClassesThat().resideInAnyPackage("..application..", "..infra..");
+
 }
