@@ -6,6 +6,8 @@ import com.tngtech.archunit.lang.ArchRule;
 import dev.barans.howtoprotectarchitecturearchunit.common.RestInboundRequest;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
+import static com.tngtech.archunit.library.freeze.FreezingArchRule.freeze;
 
 @AnalyzeClasses(packages = "dev.barans.howtoprotectarchitecturearchunit.hexagonal")
 public class NamingTest {
