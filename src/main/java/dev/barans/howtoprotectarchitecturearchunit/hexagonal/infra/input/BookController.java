@@ -1,6 +1,7 @@
-package dev.barans.howtoprotectarchitecturearchunit.hexagonal.infra.input.request;
+package dev.barans.howtoprotectarchitecturearchunit.hexagonal.infra.input;
 
 import dev.barans.howtoprotectarchitecturearchunit.hexagonal.application.service.BookApplicationService;
+import dev.barans.howtoprotectarchitecturearchunit.hexagonal.infra.input.request.CreateBookRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,6 @@ public class BookController {
 
     @GetMapping("/create")
     public void createBook(CreateBookRequest request) {
-        applicationService.createBook(request.bookName, request.type);
+        applicationService.createBook(request.bookName(), request.type());
     }
 }
