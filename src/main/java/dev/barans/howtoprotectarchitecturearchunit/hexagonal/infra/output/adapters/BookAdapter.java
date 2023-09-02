@@ -1,7 +1,7 @@
 package dev.barans.howtoprotectarchitecturearchunit.hexagonal.infra.output.adapters;
 
 import dev.barans.howtoprotectarchitecturearchunit.hexagonal.application.ports.BookPort;
-import dev.barans.howtoprotectarchitecturearchunit.hexagonal.domain.Book;
+import dev.barans.howtoprotectarchitecturearchunit.hexagonal.domain.model.Book;
 
 public class BookAdapter implements BookPort {
     @Override
