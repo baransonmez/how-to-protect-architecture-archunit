@@ -1,7 +1,10 @@
 package dev.barans.howtoprotectarchitecturearchunit.hexagonal.infra.input;
 
 import dev.barans.howtoprotectarchitecturearchunit.hexagonal.application.service.BookApplicationService;
+import dev.barans.howtoprotectarchitecturearchunit.hexagonal.domain.model.Book;
 import dev.barans.howtoprotectarchitecturearchunit.hexagonal.infra.input.request.CreateBookRequest;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +13,9 @@ public class BookController {
     BookApplicationService applicationService;
 
     @GetMapping("/create")
-    public void createBook(CreateBookRequest request) {
-        applicationService.createBook(request.bookName(), request.type());
+    @PreAuthorize(value = "ADMIN")
+    public ResponseEntity<Book> createBook(CreateBookRequest request) {
+        Book book = applicationService.createBook(request.bookName(), request.type());
+        return ResponseEntity.ok(book);
     }
 }

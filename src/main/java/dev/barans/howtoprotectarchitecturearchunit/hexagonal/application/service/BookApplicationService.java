@@ -10,8 +10,9 @@ public class BookApplicationService {
     BookPort port;
     BookDomainService domainService;
 
-    public void createBook(String name, BookType type) {
+    public Book createBook(String name, BookType type) {
         Book book = domainService.createBook(name, type);
         port.saveBook(book);
+        return book;
     }
 }
