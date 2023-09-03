@@ -4,6 +4,9 @@ import dev.barans.howtoprotectarchitecturearchunit.hexagonal.application.ports.B
 import dev.barans.howtoprotectarchitecturearchunit.hexagonal.domain.model.Book;
 
 public class BookAdapter implements BookPort {
+
+    public static final String BOOK_NAME_SALT = "saltsaltsaltsalt";
+
     @Override
     public void saveBook(Book book) {
 

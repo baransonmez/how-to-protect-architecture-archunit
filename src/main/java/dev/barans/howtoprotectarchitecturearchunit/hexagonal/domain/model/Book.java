@@ -12,4 +12,12 @@ public class Book {
         this.name = name;
         this.type = type;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public BookType getType() {
+        return type;
+    }
 }
