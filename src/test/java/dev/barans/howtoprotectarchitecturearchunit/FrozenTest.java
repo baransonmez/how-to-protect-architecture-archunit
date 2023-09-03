@@ -13,7 +13,7 @@ import static com.tngtech.archunit.library.freeze.FreezingArchRule.freeze;
 public class FrozenTest {
 
     @ArchTest
-    static final ArchRule no_classes_should_depend_on_adapters =
+    static final ArchRule no_classes_should_depend_on_ports =
             freeze(noClasses().should().dependOnClassesThat().resideInAPackage("..ports.."));
 
 }
