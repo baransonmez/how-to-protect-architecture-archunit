@@ -6,7 +6,6 @@ import dev.barans.howtoprotectarchitecturearchunit.hexagonal.domain.model.BookTy
 import dev.barans.howtoprotectarchitecturearchunit.hexagonal.domain.service.BookDomainService;
 
 public class BookApplicationService {
-
     BookPort port;
     BookDomainService domainService;
 
