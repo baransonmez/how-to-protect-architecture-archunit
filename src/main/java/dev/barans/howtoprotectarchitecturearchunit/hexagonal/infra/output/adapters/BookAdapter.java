@@ -8,6 +8,11 @@ public class BookAdapter implements BookPort {
     public static final String BOOK_NAME_SALT = "saltsaltsaltsalt";
 
     @Override
+    public Book find(Long id) {
+        return null;
+    }
+
+    @Override
     public void saveBook(Book book) {
 
     }
